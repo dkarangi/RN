@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ren Natur</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="form.css" >
+        <script src="form.js"></script>
+        
+        <div class="wrapper">
+   <video autoplay loop muted class="wrapper__video">
+      <source src="images/Naturfilm.mp4">
+   </video>
+        </div>
+        
+        
+    </head>
+    <body >
+        
+        <section class="col-md-6" id="intro">
+            
+            <h1>Velkomen til Ren Natur</h1>
+            <p>Ren Natur er et frivilligheds- og sponsorkoncept,<br>hvor foreninger mod at samle henkastet affald<br>i deres tilhørskommune, kan tjene sponsormidler.</p> <p2>Prøv naturquizzen herunder!</p2>
+            
+       
+            
+        </section>
+        <section class="content" id="quiz">
+        
+        <form name="myform" class="quiz">
+       Hvilken af disse træarter er der flest af i Danmark?<br>
+       <input type="radio" name="q1" value="a">Nåletræ<br>
+       <input type="radio" name="q1" value="b">Bøgetræ<br>
+       <input type="radio" name="q1" value="c">Egetræ<br> <br>
+       
+       Hvilken af disse danske skove er størst?<br>
+       <input type="radio" name="q2" value="a">Gribskov - Nordsjælland<br>
+       <input type="radio" name="q2" value="b">Klosterheden - Vestjylland<br>
+       <input type="radio" name="q2" value="c">Almindingen - Bornholm<br> <br>
+       
+       Hvor ligger der mest skov henne?<br>
+       <input type="radio" name="q3" value="a">Bornholm<br>
+       <input type="radio" name="q3" value="b">Sjælland og Fyn<br>
+       <input type="radio" name="q3" value="c">Jylland<br> <br>
+       
+        Hvad handler "Ren natur" om?<br>
+       <input type="radio" name="q4" value="a">At lufte hunde<br>
+       <input type="radio" name="q4" value="b">At samle affald<br>
+       <input type="radio" name="q4" value="c">At samle på frimærker<br> <br>
+       
+        Hvad giver vi tilbage til dig?<br>
+       <input type="radio" name="q5" value="a">Frimærker<br>
+       <input type="radio" name="q5" value="b">Sponsormidler<br>
+       <input type="radio" name="q5" value="c">Gavekort<br> <br>
+        
+        
+        
+        <input type="button" value="Svar" onclick="check()" class="knap">
+    </form>
+    
+    <script>
+        function check(){
+            var q1=document.myform.q1.value;
+            var q2=document.myform.q2.value;
+            var q3=document.myform.q3.value;
+            var q4=document.myform.q4.value;
+            var q5=document.myform.q5.value;
+            var count=0;
+            
+            if(q1=="a"){
+                count++;
+            }
+            if(q2=="b"){
+                count++;
+            }
+            if(q3=="c"){
+                count++;
+            }
+            
+            if(q4=="b"){
+                count++;
+            }
+             if(q5=="b"){
+                count++;
+            }
+            alert("Du fik "+count+" rigtige");
+        }
+    
+    
+    </script>
+    
+    <style>
+        .quiz{
+            
+            font-family: sans-serif;
+            color: #fff;
+        }
+        .knap{
+            width: 100px;
+            color: #000;
+        }
+    
+    
+    </style>
+        </section>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 " id="form_container">
+                    <h2>Tilmeld jer her!</h2> 
+                    <p> </p>
+                    <form role="form" method="post" id="reused_form">
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <label for="message"> Fortæl os om jeres forening:</label>
+                                <textarea class="form-control" type="textarea" id="message" name="message" maxlength="6000" rows="7"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label for="name"> Kontaktperson:</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="email"> Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <button type="submit" class="btn btn-lg btn-default pull-right" >Send &rarr;</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Tak for jeres henvendelse!</h3> </div>
+                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Hov! Der gik noget galt.</h3></div>
+                </div>
+            </div>
+        </div>
+        
+        <iframe src="http://karangi.dk/RenNatur_banner/RenNatur_banner.html" style="width:732px;height:90px" name="iframe" class="iframe"></iframe>
+        
+    </body>
+</html>
